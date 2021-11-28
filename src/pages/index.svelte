@@ -1,11 +1,20 @@
 <script>
-  import Button from '../components/button.svelte'
+  import { Link } from 'svelte-navigator';
+  import Button from '../components/button.svelte';
 </script>
 
-<h1>Generador de Amigo Secreto</h1>
-<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-<Button text='Crear sala' color='green'/>
-<Button text='Unirme a una sala' color='blue'/>
+<div class="grid">
+  <h1>Generador de Amigo Secreto</h1>
+  <Link to="create">
+    <Button text='Crear sala' color='green'/>
+  </Link>
+  <Link to="join">
+    <Button text='Unirme a una sala' color='blue'/>
+  </Link>
+</div>
 
 <style>
+	h1 {
+		@apply text-2xl;
+	}
 </style>

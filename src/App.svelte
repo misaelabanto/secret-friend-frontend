@@ -2,6 +2,7 @@
 	import { Router, Route } from 'svelte-navigator';
 	import Create from './pages/create.svelte';
 	import Index from './pages/index.svelte';
+	import Join from './pages/join.svelte';
 </script>
 
 <Router>
@@ -13,14 +14,12 @@
 		<Route path='create'>
 			<Create />
 		</Route>
+
+		<Route path='join'>
+			<Join />
+		</Route>
 	</main>
 </Router>
 
 <style windi:preflights:global windi:safelist:global>
-	body {
-		@apply p-8;
-	}
-	h1 {
-		@apply text-2xl;
-	}
 </style>

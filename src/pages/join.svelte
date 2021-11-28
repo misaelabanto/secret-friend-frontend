@@ -5,8 +5,8 @@
 
 <Input
   id='room-name'
-  label='Nombre de la sala'
-  placeholder='Nombre de la sala'
+  label='Código de la sala'
+  placeholder='Código de la sala'
   type={InputType.text}
 />
 <Input
