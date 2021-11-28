@@ -6,6 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import css from 'rollup-plugin-css-only';
+import { windi } from 'svelte-windicss-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -19,7 +20,7 @@ function serve() {
 	return {
 		writeBundle() {
 			if (server) return;
-			server = require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
+			server = require('child_process').spawn('yarn', ['start', '--dev'], {
 				stdio: ['ignore', 'inherit', 'inherit'],
 				shell: true
 			});
@@ -40,7 +41,12 @@ export default {
 	},
 	plugins: [
 		svelte({
-			preprocess: sveltePreprocess({ sourceMap: !production }),
+			preprocess: [
+				windi({}),
+				sveltePreprocess({
+					sourceMap: !production,
+				}),
+			],
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
