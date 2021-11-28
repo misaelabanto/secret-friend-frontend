@@ -1,12 +1,6 @@
-<script context="module" lang="ts">
-  export enum InputType {
-    number = 'number',
-    phone = 'phone',
-    email = 'email',
-    text = 'text',
-  };
-</script>
+
 <script lang="ts">
+  import type { InputType } from "../interfaces/input-type.interface";
   export let id = '';
   export let label = '';
   export let placeholder = '';

@@ -1,21 +1,20 @@
 <script lang="ts">
-	import Button from './components/button.svelte';
-	import Input, { InputType } from './components/input.svelte';
+	import { Router, Route } from 'svelte-navigator';
+	import Create from './pages/create.svelte';
+	import Index from './pages/index.svelte';
 </script>
 
-<main>
-	<h1>Generador de Amigo Secreto</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<Button text='Crear sala' color='green'/>
-	<Button text='Unirme a una sala' color='blue'/>
-	<br>
-	<Input
-		id="room-name"
-		placeholder='hello'
-		type={InputType.text}
-		label='Nombre de la sala'
-	/>
-</main>
+<Router>
+	<main>
+		<Route path='/'>
+			<Index />
+		</Route>
+		
+		<Route path='create'>
+			<Create />
+		</Route>
+	</main>
+</Router>
 
 <style windi:preflights:global windi:safelist:global>
 	body {
