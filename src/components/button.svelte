@@ -9,9 +9,9 @@
 
 <style>
   .blue {
-    @apply h-10 w-40 bg-blue-500 text-white;
+    @apply h-12 w-40 bg-blue-500 text-white;
   }
   .green {
-    @apply h-10 w-40 bg-green-500 text-white;
+    @apply h-12 w-40 bg-green-500 text-white;
   }
 </style>

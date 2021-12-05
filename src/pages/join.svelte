@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Button from '../components/button.svelte';
   import Input from '../components/input.svelte';
   import { InputType } from '../interfaces/input-type.interface';
 </script>
@@ -11,9 +12,11 @@
 />
 <Input
   id='player-name'
-  label='Nombre'
-  placeholder='Nombre'
+  label='Nombre de usuario'
+  placeholder='Nombre de usuario'
   type={InputType.text}
 />
+/>
+<Button color='blue' text='Continuar'/>
 
 <style></style>
